@@ -1,0 +1,77 @@
+name: "申请项目仓库权限"
+description: "登记班级、数字课题编号和GitHub用户名，教师核验后邀请"
+title: "[权限申请] 2026-10-agent / 数字课题编号 / 小组代号"
+body:
+  - type: markdown
+    attributes:
+      value: |
+        本申请公开可见。不要填写姓名、学号、手机号、密码、Token或API Key，也不要上传分组原表。
+        每组提交一份，登记全部成员的GitHub用户名。教师私下核验后逐人邀请，提交表单不会自动授权。
+        编号按最新表填写；02、10未选，不受理申请。
+  - type: input
+    id: class_code
+    attributes:
+      label: "班级代号"
+      value: "2026-10-agent"
+    validations:
+      required: true
+  - type: input
+    id: group_code
+    attributes:
+      label: "小组代号"
+      placeholder: "例如 group-07，以老师分组表为准"
+    validations:
+      required: true
+  - type: dropdown
+    id: topic
+    attributes:
+      label: "课题编号"
+      options:
+        - "01 产业多维研判 Agent 工作流"
+        - "03 企业风险分析报告 Agent 工作流"
+        - "04 企业智能推荐增强 Agent 工作流"
+        - "05 招商销售 Agent 助手"
+        - "06 实时物流监控 Agent 工作流"
+        - "07 科研文献搜集与证据问答 Agent"
+        - "08 多论文方法与结论对比 Agent 工作流"
+        - "09 科研知识空白候选发现 Agent"
+        - "11 论文复现实验规划 Agent 工作流"
+        - "12 多源时序数据量化分析与可视化 Agent"
+        - "13 科学论文审稿 Agent 工作流"
+        - "14 个人 PC 知识库构建与检索 Agent"
+        - "15 高考志愿填报推荐 Agent 助手"
+        - "16 智能会议纪要与任务跟踪 Agent 工作流"
+        - "17 多约束旅行行程规划 Agent"
+        - "18 2D 图像到 3D 打印模型生成 Agent 工作流"
+        - "19 产业岗位能力与课程知识点匹配 Agent"
+        - "20 岗位定向模拟面试 Agent 助手"
+        - "21 电路与 PCB 辅助设计 Agent 工作流"
+        - "22 虚拟人生数字分身 Agent"
+        - "23 “我的故事我做主”短视频生成 Agent 工作流"
+        - "24 多智能体阵营推理 Agent 游戏平台"
+        - "25 虚拟宠物养成与进化 Agent"
+    validations:
+      required: true
+  - type: input
+    id: github_username
+    attributes:
+      label: "提交申请者的GitHub用户名"
+      description: "个人主页github.com/后面的名字，不是昵称或邮箱"
+    validations:
+      required: true
+  - type: textarea
+    id: group_members
+    attributes:
+      label: "全部成员GitHub用户名"
+      description: "每行一人，包含提交申请者；教师向每位成员分别邀请"
+    validations:
+      required: true
+  - type: checkboxes
+    id: confirmation
+    attributes:
+      label: "确认"
+      options:
+        - label: "申请的是老师分配给本组的课题，全部成员均已核对用户名"
+          required: true
+        - label: "申请中没有姓名、学号、联系方式、密码、密钥或分组原表"
+          required: true
